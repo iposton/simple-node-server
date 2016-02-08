@@ -1,9 +1,12 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var ejsMate = require('ejs-mate');
 
 app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 
